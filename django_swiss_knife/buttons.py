@@ -1,4 +1,4 @@
-from django.forms.widgets import flatatt
+from django.forms.utils import flatatt
 from django.utils.safestring import mark_safe
 
 
