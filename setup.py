@@ -19,4 +19,7 @@ setup(
     author_email='eduardo@sthima.com.br',
     classifiers=[
     ],
+    install_requires=[
+        "django-bootstrap-breadcrumbs",
+    ],
 )
