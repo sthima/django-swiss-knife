@@ -1,9 +1,15 @@
 language: python
 python:
-  - "3.5"
-
+- '3.5'
 install:
-  - "pip install -r requirements.txt"
-# command to run tests
+- pip install -r requirements.txt
 script:
-  - touch runtests
+- touch runtests
+deploy:
+  provider: pypi
+  user: edferreira
+  password:
+    secure: xnu3rQb+nukRWn9qqAvGeTYgn+Uu4NNYW9ZBpKEjPj62WMP7LA8Yjm5FUooZE17dPivyCCDYmMAQhn0rK3xXT9ZLbd3yvdlnEnjqR5XOZ2JJbKjntkazMblwV4/Xwcgw0qBpWc0qoffJpaV7tJOhOLW+yUoo51DAyiFhlSuROemOxkkFIIUjvM1FX4ed/Zb7+SkH2qCmUOXwa1x9Kpm8LahiI0KFSD8IoOjOSueUBcRI68gQw/vxew1Veerf1e70bs58nJUulskbaOrhF5SU2Nw44TWLvJWJC03iUCup4cUWWJt/y/uGEOm1rqvAVuLmVBpPzXGqsvXVP013JLB2DMmPRMaktKdmTYqrhGOiKJtW9KaOWNM02vYzrjj57IP8HGirnO448OJuVJ9oN+LoQ5hsWvHIn79LgK7qh8WXfSRtHcc7mRgnOBdHXsFsE4XdaMludOPzMlkrDnQhusrhMkyI6RvU63WmKw8KaWboEvgtITVpNJKHwVZYXyBbLBxPzbkSNQj+yPu7WZ0N1JpKbnKJZFIejh0LPL6sjNCqgCZXnJVdfcfNlmqGCRkYHGmundnauIuQzfYAOhBkUyrzP0rDovMVxmoTCIlWFE+JDLON6w+UtL3gUaReF7gc4lyYiuhrS2nIKSGr4X9xy4/i/a1fPqoe5O40oZgKKET5zm8=
+  on:
+    tags: true
+    branch: master
