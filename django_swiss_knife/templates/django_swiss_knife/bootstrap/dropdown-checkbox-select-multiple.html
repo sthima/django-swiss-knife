@@ -8,7 +8,7 @@
   <ul class="col-xs-12 dropdown-menu">
     {% block choices %}
       <li class="checkbox checkbox-info m-b-15">
-        <a href="#">
+        <a>
           <input type="checkbox" id="chk_{{ name }}_all" class="selectAll">
           <span>
             <b>Todos</b>
@@ -17,7 +17,7 @@
       </li>
       {% for choice_key, choice_label, choice_checked in choices %}
       <li class="checkbox-info">
-        <a href="#">
+        <a>
           <input type="checkbox" {% if choice_checked %}checked{% endif %} name="{{ name }}" id="chk_{{ name }}_{{ forloop.counter }}" value="{{ choice_key }}" is-multiple=true>
           <span>
             {{ choice_label }}

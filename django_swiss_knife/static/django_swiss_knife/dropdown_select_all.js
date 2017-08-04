@@ -1,3 +1,3 @@
 $(".selectAll").click(function(){
-    $(this).parent().siblings().find('input').prop('checked', $(this).prop('checked'));
+    $(this).parent().parent().siblings().find('a').find('input').prop('checked', $(this).prop('checked'));
 })
