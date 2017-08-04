@@ -1,5 +1,6 @@
 from django.forms.utils import flatatt
 from django.utils.safestring import mark_safe
+from django.template import loader
 
 
 class AbstractButton(object):
@@ -34,3 +35,24 @@ class Anchor(AbstractButton):
 
     def render(self, *args, **kwargs):
         return mark_safe("<a href='%s' %s>%s</a>" % (self.url, flatatt(self.attrs), self.label))
+
+
+class MultiActionsButton(AbstractButton):
+    ''' A dropdown button that display a all buttons passed on actions
+    '''
+    template_name = "django_swiss_knife/bootstrap/multi-actions-dropdown-button.html"
+    def __init__(self, label, actions=[]):
+        self.label = label
+        self.actions = actions
+
+    def get_context_data(self, *args, **kwargs):
+        context = {
+            'label': self.label,
+            'actions': self.actions
+        }
+        return context
+
+    def render(self, *args, **kwargs):
+        template = loader.get_template(self.template_name)
+        context = self.get_context_data(*args, **kwargs)
+        return template.render(context)

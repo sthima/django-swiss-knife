@@ -1,6 +1,6 @@
 {% load staticfiles %}
 {% block dropdown %}
-<span class="dropdown pull-left" {{ attrs }}>
+<div class="dropdown pull-left" {{ attrs }}>
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
     {{ label }}&nbsp;
     <span class="caret"></span>
@@ -23,6 +23,6 @@
       {% endfor %}
     {% endblock %}
   </ul>
-</span>
+</div>
 <script type="text/javascript" src="{% static 'django_swiss_knife/dropdown_select_all.js' %}"></script>
 {% endblock %}
