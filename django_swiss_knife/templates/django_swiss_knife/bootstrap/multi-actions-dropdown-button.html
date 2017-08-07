@@ -1,0 +1,12 @@
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{ label }}
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right">
+    {% for action in actions %}
+    <li>
+        {{ action }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>

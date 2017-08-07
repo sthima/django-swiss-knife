@@ -1,5 +1,5 @@
 from django import forms
-from django.template import Context, loader
+from django.template import loader
 
 
 class TemplateWidgetMixin(object):
