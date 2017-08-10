@@ -41,3 +41,17 @@ class DropdownCheckboxSelectMultipleWidget(TemplateWidgetMixin, forms.CheckboxSe
             'label': self.label,
         })
         return context
+
+
+class SearchInput(forms.TextInput):
+    '''
+    '''
+
+    def render(self, name, value, attrs=None):
+        attrs = attrs or {}
+        attrs.update({
+            'class': "form-control list-filter",
+            'placeholder': "Pesquisar",
+        })
+        html = "%s" % super(SearchInput, self).render(name, value, attrs)
+        return html
