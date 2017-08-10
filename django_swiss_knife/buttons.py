@@ -56,3 +56,24 @@ class MultiActionsButton(AbstractButton):
         template = loader.get_template(self.template_name)
         context = self.get_context_data(*args, **kwargs)
         return template.render(context)
+
+
+class SplitButtonsDropdown(AbstractButton):
+    ''' A button splitted into action and dropdown
+    '''
+    template_name = "django_swiss_knife/bootstrap/split-button-dropdown.html"
+    def __init__(self, main_action, actions=[]):
+        self.main_action = main_action
+        self.actions = actions
+
+    def get_context_data(self, *args, **kwargs):
+        context = {
+            'main_action': self.main_action,
+            'actions': self.actions
+        }
+        return context
+
+    def render(self, *args, **kwargs):
+        template = loader.get_template(self.template_name)
+        context = self.get_context_data(*args, **kwargs)
+        return template.render(context)
