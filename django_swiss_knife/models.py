@@ -1,5 +1,6 @@
 from django.db import models
 from bootstrap3_datetime.widgets import DateTimePicker
+from . import fields
 
 
 class ViewModelMeta:
@@ -36,6 +37,8 @@ class MoneyField(models.DecimalField):
         defaults = {}
         defaults['max_digits'] = 12
         defaults['decimal_places'] = 2
+        defaults['localize'] = True
+        defaults['form_class'] = fields.MoneyField
         defaults.update(kwargs)
         return super().formfield(**defaults)
 
