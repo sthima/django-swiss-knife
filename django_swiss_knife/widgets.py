@@ -55,3 +55,11 @@ class SearchInput(forms.TextInput):
         })
         html = "%s" % super(SearchInput, self).render(name, value, attrs)
         return html
+
+
+class MoneyInput(forms.TextInput):
+    class Media:
+        js = [
+            'django_swiss_knife/plugins/jquery.mask.js',
+            'django_swiss_knife/money-input.js',
+        ]
