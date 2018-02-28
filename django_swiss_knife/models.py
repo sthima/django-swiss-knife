@@ -46,7 +46,6 @@ class MoneyField(models.DecimalField):
 class DateTimeField(models.DateTimeField):
     def formfield(self, **kwargs):
         defaults = {}
-        defaults['input_formats'] = ['%d/%m/%Y %H:%M']
         defaults['widget'] = DateTimePicker(
             options={
                 "format": "DD/MM/YYYY HH:mm",
@@ -68,7 +67,6 @@ class DateTimeField(models.DateTimeField):
 class DateField(models.DateField):
     def formfield(self, **kwargs):
         defaults = {}
-        defaults['input_formats'] = ['%d/%m/%Y']
         defaults['widget'] = DateTimePicker(
             options={
                 "format": "DD/MM/YYYY",
