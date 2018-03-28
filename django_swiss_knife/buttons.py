@@ -62,14 +62,16 @@ class SplitButtonsDropdown(AbstractButton):
     ''' A button splitted into action and dropdown
     '''
     template_name = "django_swiss_knife/bootstrap/split-button-dropdown.html"
-    def __init__(self, main_action, actions=[]):
+    def __init__(self, main_action, actions=[], split_button_classes="btn btn-default"):
         self.main_action = main_action
         self.actions = actions
+        self.split_button_classes = split_button_classes
 
     def get_context_data(self, *args, **kwargs):
         context = {
             'main_action': self.main_action,
-            'actions': self.actions
+            'actions': self.actions,
+            'split_button_classes': self.split_button_classes
         }
         return context
 

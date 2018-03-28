@@ -22,9 +22,10 @@ class DropdownCheckboxSelectMultipleWidget(TemplateWidgetMixin, forms.CheckboxSe
     '''
     template_name = 'django_swiss_knife/bootstrap/dropdown-checkbox-select-multiple.html'
 
-    def __init__(self, *args, label='', **kwargs):
+    def __init__(self, *args, label='',  button_classes="btn btn-default", **kwargs):
         super().__init__(*args, **kwargs)
         self.label = label
+        self.button_classes = button_classes
 
     def get_context_data(self, name, value, attrs={}):
         context = super().get_context_data(name, value, attrs)
@@ -39,6 +40,7 @@ class DropdownCheckboxSelectMultipleWidget(TemplateWidgetMixin, forms.CheckboxSe
         context.update({
             'choices': choices,
             'label': self.label,
+            'button_classes': self.button_classes,
         })
         return context
 

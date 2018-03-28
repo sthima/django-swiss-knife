@@ -1,7 +1,7 @@
 {% load staticfiles %}
 {% block dropdown %}
 <div class="dropdown pull-left" {{ attrs }}>
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+  <button type="button" class="{{ button_classes }} dropdown-toggle" data-toggle="dropdown">
     {{ label }}&nbsp;
     <span class="caret"></span>
   </button>
